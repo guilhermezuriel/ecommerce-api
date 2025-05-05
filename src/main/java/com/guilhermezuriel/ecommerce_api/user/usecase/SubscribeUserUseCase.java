@@ -19,11 +19,12 @@ public class SubscribeUserUseCase {
 
         User newUser = new User(form);
         boolean verifyIfEmailExists = this.userRepository.existsByEmail(newUser.email());
+
         if(verifyIfEmailExists) {
             throw new RuntimeException("Email already exists");
         }
 
-        userEntity.setPassword(newUser.email());
+        userEntity.setEmail(newUser.email());
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         userEntity.setPassword(bCryptPasswordEncoder.encode(newUser.password()));
