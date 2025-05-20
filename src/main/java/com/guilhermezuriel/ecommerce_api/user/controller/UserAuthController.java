@@ -1,6 +1,7 @@
 package com.guilhermezuriel.ecommerce_api.user.controller;
 
-import com.guilhermezuriel.ecommerce_api.user.usecase.UserAuthUseCase;
+import com.guilhermezuriel.ecommerce_api.user.usecase.auth.dto.AuthResponseDto;
+import com.guilhermezuriel.ecommerce_api.user.usecase.auth.UserAuthUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,9 +12,9 @@ public class UserAuthController {
 
     private final UserAuthUseCase userAuthUseCase;
 
-    public ResponseEntity<String> authenticateUser(String username, String password) {
-        String token = userAuthUseCase.authenticate(username, password);
-        return ResponseEntity.ok(token);
+    public ResponseEntity<AuthResponseDto> authenticateUser(String username, String password) {
+        AuthResponseDto response = userAuthUseCase.authenticate(username, password);
+        return ResponseEntity.ok(response);
     }
 
 }
