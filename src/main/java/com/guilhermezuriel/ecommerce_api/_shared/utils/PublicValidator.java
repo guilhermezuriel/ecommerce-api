@@ -20,7 +20,7 @@ public class PublicValidator {
                 errors.put(violation.getPropertyPath().toString(), violation.getMessage());
             }
             if (throwException) {
-                throw new ConstraintViolationException("Validation failed", violations);
+                throw new ConstraintViolationException(errors.toString(), violations);
             }
         }
         return errors.values().toString();
