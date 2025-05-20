@@ -24,6 +24,8 @@ public class SubscribeUserUseCase {
             throw new RuntimeException("Email already exists");
         }
 
+        userEntity.setId(newUser.id());
+
         userEntity.setEmail(newUser.email());
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
