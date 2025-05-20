@@ -1,4 +1,4 @@
-package com.guilhermezuriel.ecommerce_api.user.form;
+package com.guilhermezuriel.ecommerce_api.user.usecase.subscribe.form;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

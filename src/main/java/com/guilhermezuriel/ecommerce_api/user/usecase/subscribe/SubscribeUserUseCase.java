@@ -1,9 +1,9 @@
-package com.guilhermezuriel.ecommerce_api.user.usecase;
+package com.guilhermezuriel.ecommerce_api.user.usecase.subscribe;
 
 import com.guilhermezuriel.ecommerce_api.user.domain.User;
-import com.guilhermezuriel.ecommerce_api.user.form.CreateUserForm;
 import com.guilhermezuriel.ecommerce_api.user.infra.entity.UserEntity;
 import com.guilhermezuriel.ecommerce_api.user.infra.repository.UserRepository;
+import com.guilhermezuriel.ecommerce_api.user.usecase.subscribe.form.CreateUserForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;

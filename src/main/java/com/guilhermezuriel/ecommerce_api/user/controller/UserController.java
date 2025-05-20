@@ -1,10 +1,10 @@
 package com.guilhermezuriel.ecommerce_api.user.controller;
 
-import com.guilhermezuriel.ecommerce_api.user.form.CreateUserForm;
-import com.guilhermezuriel.ecommerce_api.user.infra.repository.UserRepository;
-import com.guilhermezuriel.ecommerce_api.user.usecase.SubscribeUserUseCase;
+import com.guilhermezuriel.ecommerce_api.user.usecase.subscribe.form.CreateUserForm;
+import com.guilhermezuriel.ecommerce_api.user.usecase.subscribe.SubscribeUserUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +15,7 @@ public class UserController {
 
     private final SubscribeUserUseCase subscribeUserUseCase;
 
+    @PostMapping
     public ResponseEntity<Void> subscribeUser(CreateUserForm form) {
         this.subscribeUserUseCase.subscribe(form);
         return ResponseEntity.noContent().build();
