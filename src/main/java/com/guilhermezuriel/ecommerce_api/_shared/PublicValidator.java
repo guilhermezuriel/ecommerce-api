@@ -1,4 +1,4 @@
-package com.guilhermezuriel.ecommerce_api.shared;
+package com.guilhermezuriel.ecommerce_api._shared;
 
 import jakarta.validation.*;
 

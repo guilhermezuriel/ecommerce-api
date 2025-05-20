@@ -1,6 +1,6 @@
 package com.guilhermezuriel.ecommerce_api.user.domain;
 
-import com.guilhermezuriel.ecommerce_api.shared.PublicValidator;
+import com.guilhermezuriel.ecommerce_api._shared.PublicValidator;
 import com.guilhermezuriel.ecommerce_api.user.form.CreateUserForm;
 import com.guilhermezuriel.ecommerce_api.user.infra.entity.UserEntity;
 import jakarta.validation.constraints.Email;
