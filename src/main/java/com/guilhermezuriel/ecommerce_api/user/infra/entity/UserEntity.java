@@ -37,7 +37,12 @@ public class UserEntity implements UserDetails {
 
     @Override
     public String getUsername() {
-        return "";
+        return this.email;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.password;
     }
 
     @Override
