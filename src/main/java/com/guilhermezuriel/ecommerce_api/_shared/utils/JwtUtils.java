@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
 @Slf4j
@@ -23,9 +20,9 @@ public class JwtUtils {
     @Value("${jwt.expiration}")
     private long expiration;
 
-    public String generateToken(UserDetails userDetails) {
+    public String generateToken(String login) {
         return Jwts.builder()
-                .setSubject(userDetails.getUsername())
+                .setSubject(login)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(SignatureAlgorithm.HS256, secretKey)
