@@ -8,4 +8,5 @@ import java.util.UUID;
 
 @Repository
 public interface CategoryRepository extends MongoRepository<CategoryEntity, UUID> {
+    boolean existsByName(String name);
 }
